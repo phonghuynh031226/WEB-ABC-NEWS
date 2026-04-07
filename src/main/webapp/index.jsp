@@ -22,7 +22,7 @@
         padding-bottom: 5px;
         color: #2c3e50;
     }
-
+ 
     .news-list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

@@ -8,14 +8,14 @@
         response.sendRedirect(request.getContextPath() + "/login");
         return;
     }
-    if (!user.isRole()) {
+    if (!user.isRole()) { 
         response.sendRedirect(request.getContextPath() + "/home");
         return;
     }
 %>
 
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
 <meta charset="UTF-8">
 <title>Trang quản trị - ABC News</title>

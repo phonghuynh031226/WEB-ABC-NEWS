@@ -189,7 +189,7 @@
     <ul id="savedList"></ul>
     <button class="btn-clear">🗑 Xóa tất cả</button>
   </div>
-</div>
+</div> 
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -209,17 +209,22 @@ document.addEventListener("DOMContentLoaded", function () {
         if (saved.length === 0) {
             listContainer.innerHTML = "<li>Chưa có bài viết nào được lưu.</li>";
         } else {
-            saved.forEach(item => {
-                const li = document.createElement("li");
-                li.innerHTML = `
-                    <a href="${item.url}" target="_blank" style="display:flex; align-items:center; gap:10px;">
-                        <img src="${item.image}" alt="${item.title}" style="width:60px;height:60px;object-fit:cover;border-radius:6px;">
-                        <span>${item.title}</span>
-                    </a>
-                `;
+        	saved.forEach(item => {
+        	    const li = document.createElement("li");
+        	    li.innerHTML = `
+        	        <a href="${item.url}" target="_blank" style="display:flex;align-items:center;gap:10px;">
+        	            <img src="${item.image || 'https://via.placeholder.com/60x60?text=No+Image'}"
+        	                 alt="${item.title || 'Không có tiêu đề'}"
+        	                 style="width:60px;height:60px;object-fit:cover;border-radius:6px;">
+        	            <div style="display:flex;flex-direction:column;">
+        	                <span style="font-weight:bold;">${item.title || 'Không có tiêu đề'}</span>
+        	                <small style="color:#555;">👤 ${item.author || 'Ẩn danh'}</small>
+        	            </div>
+        	        </a>
+        	    `;
+        	    listContainer.appendChild(li);
+        	});
 
-                listContainer.appendChild(li);
-            });
         }
 
         // 🧩 Thêm log kiểm tra

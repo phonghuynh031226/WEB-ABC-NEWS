@@ -23,7 +23,7 @@
         border-bottom: 2px solid #2c3e50;
         padding-bottom: 8px;
         margin-bottom: 15px;
-    }
+    } 
 
     form {
         margin-bottom: 30px;

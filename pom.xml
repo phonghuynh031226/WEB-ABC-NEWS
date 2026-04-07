@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>ASM_JAVA3_03102025</groupId>
-  <artifactId>ASM_JAVA3_03102025</artifactId>
+  <groupId>ASM_JAVA3_SOF203</groupId>
+  <artifactId>ASM_JAVA3_SOF203</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <build>
@@ -10,7 +10,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.13.0</version>
         <configuration>
-          <release>23</release>
+          <release>21</release>
         </configuration>
       </plugin>
       <plugin>
@@ -19,16 +19,16 @@
       </plugin>
     </plugins>
   </build>
-  
+
   <dependencies>
-    <!-- ✅ JDBC Driver cho SQL Server -->
+    <!-- ✅ SQL Server Driver -->
     <dependency>
       <groupId>com.microsoft.sqlserver</groupId>
       <artifactId>mssql-jdbc</artifactId>
       <version>12.2.0.jre11</version>
     </dependency>
 
-    <!-- ✅ Lombok (tự động tạo getter/setter/toString) -->
+    <!-- ✅ Lombok -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
@@ -44,7 +44,7 @@
       <scope>provided</scope>
     </dependency>
 
-    <!-- ✅ JSTL (cho JSP dùng thẻ JSTL) -->
+    <!-- ✅ JSTL -->
     <dependency>
       <groupId>jakarta.servlet.jsp.jstl</groupId>
       <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
@@ -56,29 +56,69 @@
       <version>3.0.1</version>
     </dependency>
 
+    <!-- ✅ Mail -->
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>jakarta.mail</artifactId>
+      <version>2.0.1</version>
+    </dependency>
+
+    <!-- ✅ BeanUtils -->
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+      <version>1.9.3</version>
+    </dependency>
+
+    <!-- ✅ Logging -->
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.2</version>
+    </dependency>
+
+<!-- ✅ Google API Client -->
+
 <dependency>
-    <groupId>com.sun.mail</groupId>
-    <artifactId>jakarta.mail</artifactId>
-    <version>2.0.1</version>
+    <groupId>com.google.api-client</groupId>
+    <artifactId>google-api-client</artifactId>
+    <version>1.34.1</version>
 </dependency>
 
-        <!-- BeanUtils -->
-        <dependency>
-            <groupId>commons-beanutils</groupId>
-            <artifactId>commons-beanutils</artifactId>
-            <version>1.9.3</version>
-        </dependency>
+<!-- Google OAuth Client -->
+<dependency>
+    <groupId>com.google.oauth-client</groupId>
+    <artifactId>google-oauth-client-jetty</artifactId>
+    <version>1.34.1</version>
+</dependency>
 
-        <!-- Commons Logging (BeanUtils phụ thuộc) -->
-        <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.2</version>
-        </dependency>
+<!-- Google HTTP Client -->
+<dependency>
+    <groupId>com.google.http-client</groupId>
+    <artifactId>google-http-client-jackson2</artifactId>
+    <version>1.43.3</version>
+</dependency>
 
-
+<!-- Google OAuth2 API (phiên bản có Userinfoplus) -->
+<dependency>
+    <groupId>com.google.apis</groupId>
+    <artifactId>google-api-services-oauth2</artifactId>
+    <version>v2-rev157-1.25.0</version>
+</dependency>
 
 
   </dependencies>
   
+    <repositories>
+        <repository>
+            <id>google-api-services</id>
+            <name>Google API Services</name>
+            <url>https://googleapis.dev/maven/</url>
+        </repository>
+        <repository>
+        <id>google-maven-central</id>
+        <name>Google Maven Central</name>
+        <url>https://maven.google.com/</url>
+    </repository>
+    </repositories>
 </project>

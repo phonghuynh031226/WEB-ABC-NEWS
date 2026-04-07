@@ -17,7 +17,7 @@
     }
 
     h2 {
-        border-bottom: 2px solid #2c3e50;
+        border-bottom: 2px solid #2c3e50; 
         padding-bottom: 5px;
         color: #2c3e50;
     }

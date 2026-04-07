@@ -22,7 +22,7 @@
         padding-bottom: 8px;
         margin-bottom: 15px;
     }
-
+ 
     .alert {
         background: #d1f7d1;
         border-left: 5px solid #27ae60;

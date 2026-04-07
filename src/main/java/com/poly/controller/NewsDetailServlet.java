@@ -17,7 +17,7 @@ public class NewsDetailServlet extends HttpServlet {
         String id = request.getParameter("id");
         News news = dao.findAll().stream()
                         .filter(n -> n.getId().equals(id))
-                        .findFirst().orElse(null);
+                        .findFirst().orElse(null);	
 
         request.setAttribute("news", news);
         request.getRequestDispatcher("/news-detail.jsp").forward(request, response);
